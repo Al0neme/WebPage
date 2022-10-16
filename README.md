@@ -22,7 +22,7 @@ cd WebPage
 python app.py
 ```
 
-登录路由为/login，用户名密码：admin/123，采用硬编码，可在app.py文件中修改
+导航地址：http://xx.xx.xx:5000/，登录路由为/login，用户名密码：admin/123，采用硬编码，可在app.py文件中修改
 
 ## 效果
 
