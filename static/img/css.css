@@ -1,0 +1,104 @@
+
+/*--- reset start ---*/
+html{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+	padding: 0;
+  background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+  background: url("./1.jpg") no-repeat fixed;
+  background-size: cover;
+}
+div, h1, p, ul, li {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+ul, li {
+	list-style: none;
+}
+img {
+	border: none;
+	display: block;
+}
+a, a:visited {	
+  color: #79A325;
+  background: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: #73471B;
+  background: inherit;
+}
+.clearfloat {
+	zoom: 1;
+}
+.clearfloat:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}
+/*--- reset end ---*/
+
+/*--- headers ---*/
+h1, h3 {
+  font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+  font-weight: Bold; 	
+  padding: 10px;		
+  color: #444;
+}
+h1 {
+  font-size: 2.9em;
+}
+h3 {
+  font-size: 1.6em;
+  font-weight: normal;
+  padding: 16px 10px 4px 10px;
+}
+
+/*--- Paragraph ---*/
+p { padding: 12px 10px;	}
+
+/*--- Lists ---*/
+ul {
+  margin: 10px 20px;
+  padding: 0 20px;
+}
+
+/*--- listbar menu ---*/
+.listbar {
+	position: relative;
+	margin: auto;
+	width: 900px;
+  height: auto;
+  border-radius: 15px;
+  background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+}
+.listbar h3 {
+	color: #51432F;
+  font: bold 1.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+  letter-spacing: 2px;
+	text-align: center;
+}
+.listbar .listmenu li {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #E8E8E8;
+}
+.listbar .listmenu li a {
+  color: #265579;
+  font-size: 1.2em;
+}
+.listbar .listmenu li a:hover {
+  color: #000;
+  background:none;
+}
+.listbar .box {
+  box-sizing: content-box;
+  float:left;
+  width: 300px;
+}
