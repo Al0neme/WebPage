@@ -1,8 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from flask import Flask, request, redirect, session,render_template
-import add_link
-import page
+import add_link, del_link, update_link, page
 
 app = Flask(__name__,template_folder="./templates",static_folder="./static")
 
@@ -23,7 +22,7 @@ def login():
         return render_template('/login.html')
     user=request.form.get('username')
     pwd=request.form.get('password')
-    if user=='admin' and pwd=='123':
+    if user=='admin' and pwd=='sm@llyy519':
         session['user_info']=user
         return redirect('/manager')
     else:
@@ -57,6 +56,44 @@ def addlink():
     # 更新导航页面
     add_link.page_update(category,title,urladdr)
     return redirect('/manager')
+
+# 修改链接
+@app.route('/updatelink', methods=["GET", "POST"])
+def updatelink():
+    user_info = session.get('user_info')
+    if not user_info:
+        return redirect('/login')
+
+    # 获取添加的链接信息
+    category = request.form.get('category')
+    title = request.form.get('title')
+    urladdr = request.form.get('urladdr')
+
+    if not title or not urladdr:
+        return redirect('/manager')
+
+    # 更新导航页面
+    update_link.page_update(category, title, urladdr)
+    return redirect('/manager')
+
+# 删除链接
+@app.route('/dellink', methods=["GET", "POST"])
+def dellink():
+    user_info = session.get('user_info')
+    if not user_info:
+        return redirect('/login')
+
+    # 获取删除的链接信息
+    category = request.form.get('category')
+    title = request.form.get('title')
+
+    if not title:
+        return redirect('/manager')
+
+    # 更新导航页面
+    del_link.page_update(category, title)
+    return redirect('/manager')
+
 
 # 退出
 @app.route('/logout')

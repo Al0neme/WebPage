@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebPageAdd</title>
+    <title>WebPageManager</title>
     <style>
         * {
             margin: 0;
@@ -16,17 +16,17 @@
             height: 100%;
             margin: 0;
 	        padding: 0;
-            background: url("./static/img/2.jpg") no-repeat;
+            background: url("./static/img/2.jpg") no-repeat fixed;
             background-size: cover;
         }
         .container {
             height: 100%;
             /* background-image: linear-gradient(to right, #fbc2eb, #a6c1ee); */
         }
-        .add-wrapper {
+        .manager-wrapper {
             background-color: #fff;
             width: 358px;
-            height: 588px;
+            height: 700px;
             border-radius: 15px;
             padding: 0 50px;
             position: relative;
@@ -35,10 +35,10 @@
             transform: translate(-50%, -50%);
         }
         .header {
-            font-size: 38px;
+            font-size: 20px;
             font-weight: bold;
             text-align: center;
-            line-height: 200px;
+            line-height: 40px;
         }
         .input-item {
             display: block;
@@ -87,7 +87,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="add-wrapper">
+        <a href="/logout">Logout</a>
+        <div class="manager-wrapper">
+            <a href="/">WebPage</a>
             <div class="header">Add Link</div>
             <form method="post" action="addlink">
             <div class="form-wrapper">
@@ -108,11 +110,48 @@
                 <input type="submit" value="Add">
             </div>
             </form>
-            <div class="msg">
-                <a href="/">WebPage</a>
-                <br>
-                <a href="/logout">Logout</a>
+
+            <div class="header">Update Link</div>
+            <form method="post" action="updatelink">
+            <div class="form-wrapper">
+                <select name="category">
+                <option value="社区文库">社区文库</option>
+                <option value="学习">学习</option>
+                <option value="信息搜集">信息搜集</option>
+                <option value="漏洞查询">漏洞查询</option>
+                <option value="匿名邮箱">匿名邮箱</option>
+                <option value="在线解码编码">在线解码编码</option>
+                <option value="资源查找">资源查找</option>
+                <option value="内网渗透">内网渗透</option>
+                <option value="其他">其他</option>
+                </select>
+                <!-- <input type="text" name="category" placeholder="category" class="input-item"> -->
+                <input type="text" name="title" placeholder="title" class="input-item">
+                <input type="text" name="urladdr" placeholder="urladdr" class="input-item">
+                <input type="submit" value="Update">
             </div>
+            </form>
+
+            <div class="header">Del Link</div>
+            <form method="post" action="dellink">
+            <div class="form-wrapper">
+                <select name="category">
+                <option value="社区文库">社区文库</option>
+                <option value="学习">学习</option>
+                <option value="信息搜集">信息搜集</option>
+                <option value="漏洞查询">漏洞查询</option>
+                <option value="匿名邮箱">匿名邮箱</option>
+                <option value="在线解码编码">在线解码编码</option>
+                <option value="资源查找">资源查找</option>
+                <option value="内网渗透">内网渗透</option>
+                <option value="其他">其他</option>
+                </select>
+                <!-- <input type="text" name="category" placeholder="category" class="input-item"> -->
+                <input type="text" name="title" placeholder="title" class="input-item">
+                <input type="submit" value="Del">
+            </div>
+            </form>
+
         </div>
     </div>
 </body>
