@@ -22,7 +22,7 @@ def login():
         return render_template('/login.html')
     user=request.form.get('username')
     pwd=request.form.get('password')
-    if user=='admin' and pwd=='sm@llyy519':
+    if user=='admin' and pwd=='123':
         session['user_info']=user
         return redirect('/manager')
     else:
